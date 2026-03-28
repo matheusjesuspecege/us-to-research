@@ -2,8 +2,7 @@
 
 Este repositório contém skills do OpenCode para tarefas de pesquisa e investigação:
 
-- **us-to-research-fe**: Skill focado em pesquisa frontend
-- **us-to-research-be**: Skill focado em pesquisa backend
+- **us-to-research-fe-v2**: Skill focado em pesquisa frontend
 
 ## Estrutura do Projeto
 
@@ -12,10 +11,8 @@ us-to-research/
 ├── README.md
 ├── AGENTS.md
 └── skills/
-    ├── us-to-research-fe/
+    ├── us-to-research-fe-v2/
     │   └── SKILL.md
-    └── us-to-research-be/
-        └── SKILL.md
 ```
 
 ## Fluxo de Git
