@@ -3,7 +3,7 @@
 Os atores representam papeis desempenhados pelos diversos usuarios que interagem com os serviços e funções do sistema.
 - um ator pode representar algum hardware ou outro software que interaja com o sistema. 
 - Na maioria das vezes, um ator representará uma pessoa que utilizará o sistema. 
-- Cada ator deve ter um nome e um estereótipo ex ```<<system>>``` que torna explicito que não é um ator humano, e sim sistemas de software ou hardware.
+- Cada ator deve ter um nome e um estereótipo ex **system** que torna explicito que não é um ator humano, e sim sistemas de software ou hardware.
 - Em resumo um ator é um usuário que pode representar mais de um papel no sistema
 
 **Obs.** A utilização de estereótipo de sistemas de software ou hardware não é obrigatório, é apenas recomendado para destacar a caracteristica especial que o diferencia dos atores mais comuns.
@@ -38,7 +38,11 @@ Os casos de uso são usados para capturar os requisitos funcionais do sistema (s
 - Descreve de forma resumida a funcionalidade ao qual o caso de uso se refere.
 - O caso de uso costuma ser descrito com um verbo que descreve a ação que será realizada quando for executado. ex: **Abrir Conta**.
 
-### 2.1. Classificação
+### 2.2. Localização
+
+- Cada caso de uso e tudo relacionado é salvo em sua pasta propria dentro da pasta da feature. ex: `/specs/features/[name]/[uc-01]/uc-01.md`
+
+### 2.3. Classificação
 
 Os casos de uso podem ser classificados em dois tipos: **primários** ou **secundários**
 
@@ -49,7 +53,7 @@ Os casos de uso podem ser classificados em dois tipos: **primários** ou **secun
 
 **Obs.** É importante retornar o maximo de casos de uso, primários e secundários, detalhando-os o máximo possível para evitar inconsistências e frustrações com a entrega final do software.
 
-### 2.2. Como identificar Casos de Uso
+### 2.4. Como identificar Casos de Uso
 
 **Para identificar os casos de uso, é necessário determinar as funcionalidades necessárias ao software, ou seja:**
 - Funçôes
@@ -63,7 +67,7 @@ Outra maneira de identificar casos de uso é verificar a lista de requisitos fun
 - Um caso de uso costuma ter uma série de passos ou etapas. Uma maneira de determinar se uma funcionalidade é real, ou seja, se realmente corresponde a um caso de uso, é verificar quais ações seriam realizadas quando o caso de uso fosse executado. Se não for possível identificar essas etapas, provavelmente não será um caso de uso real.
 - Se o número de passos atribuidos a um caso de uso for muito pequeno, deve-se verificar se esse caso de uso não deveria ser englobado por outro, acrescentando seus passos ás etapas dele ou mesmo se tornando um cenário alternativo de outro caso de uso.
 
-### 2.3. Documentação dos Casos de Uso
+### 2.5. Documentação dos Casos de Uso
 
 A documentação de caso de uso representa o comportamento de um caso de uso da maneira o mais completa possível, mas sem detalhes técnicos de implementação. 
 

@@ -12,10 +12,22 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 - Após a confirmação do usuário, a skill irá ler o conteudo do arquivo prd.md e caso o requisito esteja vago, irá realizar perguntas especificas para remover 'ambiguidades e ruídos' da especificação.
 - No final, o arquivo research.md é gerado ou atualizado na pasta da feature seguindo a estrutura, padrôes e especificações definidas nesta skill.
 
+---
+
 # Regra Fundamental
 
 - **SIGA O REQUISITO ORIGINAL EXATAMENTE COMO FORNECIDO. NÃO INVENTE, NÃO ADICIONE E NÃO SUPONHA NADA QUE NÃO ESTEJA EXPRESSAMENTE DEFINIDO NA US.**
 - Se a US não menciona algo, não inclua no research. Se há ambiguidade, pergunte ao usuário antes de supor.
+
+---
+
+## Opcoes do terminal
+
+- Mostre as seguintes opções obrigatórias no terminal e aguarde a resposta do usuário:
+  - 1. Adicionei o conteudo do requisito e quero continuar (execute a etapa **Gravando os dados no arquivo**) com a intenção correta (**criar ou atualizar a feature**).
+  - 2. Encerrar (**encerra a operação**).
+
+---
 
 ## Passo a Passo
 
@@ -29,31 +41,27 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 - Se a feature NÃO existir, execute a etapa **2.2 Criar uma nova feature**
 - Se a feature existir, execute a etapa **2.3 Atualizar feature existente**
 
-### 2.2 Criar uma nova feature
+---
+
+## Criar uma nova feature
 
 - Crie o arquivo **prd.md** na pasta da feature e informe ao usuário que o arquivo foi criado na pasta
 - Solicite ao usuário que adicione o conteúdo do requisito para que possa iniciar o processo de geração do **research.md**
-- Execute **Opcoes do terminal** que está localizado na seção **Carregado sob demanda** com a intenção de **criar uma nova feature**
-
-### 2.3 Atualizar feature existente
-
-- Primeiro, leia o conteúdo atual da feature para obter contexto.
-- Execute **Opcoes do terminal** que está localizado na seção **Carregado sob demanda** com a intenção de **criar ou atualizar a feature**
+- Execute a seção **Opcoes do terminal** com a intenção de **criar uma nova feature**
+- Para cada caso de uso localizado na seção **Documentação dos Casos de Uso**, salve usando as instruções localizadas em `./references/actor-and-uc.md` na seção **2.2. Localização**
+- Grave o conteúdo atualizado no arquivo **research.md** seguindo a estrutuda definida na seção **Estrutura do arquivo** removendo os casos de uso que foram para os arquivos separados e adicionando no lugar a referencia até o arquivo do caso de uso gerado.
 
 ---
 
-## Gravando os dados no arquivo
+## Atualizar feature existente
 
-### Gravar em uma nova feature
+### Passo a passo
 
-- Exiba a mensagem "Está no modo nova feature"
-- encerrar
-
-### Gravar em uma feature existente
-
-- Analise o arquivo **pr.md** que foi atualizado com as atualizações forneceridas pelo usuário.
-- Analise o **research.md** atual da feature e compare tudo que deverá ser atualizado para manter os arquivos sincronizados e atualizados corretamente.
-- Grave o conteúdo atualizado no arquivo **research.md** seguindo a estrutuda definida na seção **Estrutura do arquivo**
+- Primeiro, leia o conteúdo atual da feature para obter contexto.
+- Execute a seção **Opcoes do terminal** com a intenção de **atualizar uma feature existente** solicitando ao usuário que atualize o arquivo **prd.md** com as novas mudanças que serão atualizadas
+- Analise o arquivo **prd.md** que foi atualizado com as atualizações forneceridas pelo usuário.
+- Analise o **research.md** atual da feature e compare tudo que deverá ser atualizado para manter os arquivos sincronizados e atualizados corretamente, com a maxima atenção para não remover o conteúdo atual que já está aprovado, ou seja, inserindo e adaptando somente o que for realmente necessário.
+- Grave o conteúdo atualizado no arquivo **research.md** e em todos os **Casos de Uso** que precisam ser atualizados.
 
 ---
 
@@ -70,7 +78,7 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 ### 3. Documentação dos Casos de Uso
 
-**Consulte:** `./references/actor-and-uc.md` na seção **2.3. Documentação dos Casos de Uso** para mais detalhes.
+**Consulte:** `./references/actor-and-uc.md` na seção **2.5. Documentação dos Casos de Uso** para mais detalhes.
 
 ### 4. Associações
 
@@ -78,10 +86,10 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 ---
 
-## Carregado sob demanda
+## Output
 
-### Opcoes do terminal
-
-- Mostre as seguintes opções obrigatórias no terminal e aguarde a resposta do usuário:
-  - 1. Adicionei o conteudo do requisito e quero continuar (execute a etapa **Gravando os dados no arquivo**) com a intenção correta (**criar ou atualizar a feature**).
-  - 2. Encerrar (**encerra a operação**).
+```markdown
+Research foi (atualizado ou criado) com sucesso!
+UC gerados: X
+UC afetados: x
+```
