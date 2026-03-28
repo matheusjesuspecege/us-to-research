@@ -3,7 +3,7 @@
 Os atores representam papeis desempenhados pelos diversos usuarios que interagem com os serviços e funções do sistema.
 - um ator pode representar algum hardware ou outro software que interaja com o sistema. 
 - Na maioria das vezes, um ator representará uma pessoa que utilizará o sistema. 
-- Cada ator deve ter um nome e um estereótipo ex **system** entre dois sinais de menor (<) e dois de maior (>), que torna explicito que não é um ator humano, e sim sistemas de software ou hardware.
+- Cada ator deve ter um nome e um estereótipo que pode ser encontrado na sessão **4. Estereótipos**, que torna explicito que não é um ator humano, e sim sistemas de software ou hardware.
 - Em resumo um ator é um usuário que pode representar mais de um papel no sistema
 
 **Obs.** A utilização de estereótipo de sistemas de software ou hardware não é obrigatório, é apenas recomendado para destacar a caracteristica especial que o diferencia dos atores mais comuns.
@@ -121,21 +121,47 @@ As associações de **extensão** são usadas para descrever cenários opcionais
 
 **Exemplo:** Em um formulário de login em que o cliente deverá informar seu nome-login e senha para poder se autenticar no sistema. No cenário ideal desse processo, o cliente informará um nome-login e senha válidos e lhe será permitido acessar o software. Contudo, pode acontecer de o cliente estar acessando a esse formulario pela primeira vez e não possuir cadastro no sistema. Ao prever essa possibilidade, o formuario permite que o cliente se registre, apresentando a opção de pressionar o botão **Autoregistrar** para se cadastrar no sistema. Obviamente, o cliente só fará isso na primeira vez, seguindo o processo normal nas vezes seguintes. Uma vez que o processo de Autoregistrar poderá ser chamado a partir do processo de **Login**, mediante a condiçção de o cliente nao estar cadastrando.
 
-## 4. Estereótipos
-
-Todos os estereótipos são representados pelo **nome** entre dois sinais de menor (<) e dois de maior (>).
-
-**Exemplos de estereótipos**:
-- **extend:** É representada de forma muito semelhante a **inclusão**, diferenciando-se pelo fato de a seta apontar para o caso de uso que utiliza o caso de uso estendido, e por haver um estereótipo contendo o texto **extend** entre dois sinais de menor (<) e dois de maior (>).
-- **include:** É representada por uma linha tracejada contendo uma seta em uma de suas extremidades, a qual aponta para o caso de uso incluido no caso de uso posicionado na outra extremidade da linha. Costumam tambem apresentar um estereótipo que contém o texto **include:** entre dois sinais de menor (<) e dois de maior (>).
-- **system:** entre dois sinais de menor (<) e dois de maior (>).
-- **generalização/especialização:** É representada por uma linha com uma seta mais grossa, que indica qual o caso de uso geral (para o qual a seta aponta) e quais os casos de uso especializados (os que se encontram na outra extremidade da seta, apontando para o caso de uso geral). **ex:** 'Abrir Conta Comum' é o caso de uso geral, e (Abrir Conta Especial, Abrir Conta Poupança) são especializações do caso de uso **Abrir Conta Comum** e detalham as particularidades em sua própria documentação.
-- **restrições em associações de extensão:** Pode-se acrescentar uma condição á associação de extensão por meio de uma nota explicativa, determinando a condição para que o caso de uso seja executado. A seta tracehada que une o componente é chamada âncora.
-
-## 5. Restrições em Associações de Extensão
+### 3.4. Restrições em Associações de Extensão
 
 São utilizadas para definir validações, consistências, condições etc... que devem ser aplicadas a um determinado componente ou situação.
 
 - Ao tratar de extensôes, ás vezes nem sempre fica claro qual é a condição para um caso de uso estendido seja executado. Assim, pode-se acrescentar um estereótio que pode ser localizado na seção **4. Estereótipos**.
 
 **Obs.** essas restrições nada mais são do que regras de negócio referentes ao processo.
+
+### 3.5. Pontos de Extensão
+
+Um ponto de extensão identifica um ponto no comportamento de um caso de uso a partir do qual esse comportamento poderá ser estendido pelo comportamento de outro caso de uso, se a condição para que isso ocorra for satisfeita.
+
+### 3.6. Multiplicidade
+
+A multiplicidade em uma associação entre um ator e um caso de uso basicamente especifica o número de vezes que um ator pode usar um determinado caso de uso.
+
+- 1:1
+- 1:N
+- N:N
+
+--- 
+
+## 4. Estereótipos
+
+Os estereótipos possibilitam certo grau de extensibilidade aos componentes ou associações da UML. além de permitir a identificação de componentes ou associações que, embora semelhantes aos outros, tenham alguma caracteristica que os diferencie, dando-lhes mais destaque no diagrama.
+- Podem atribuir funções extras a um componente, permitindo que este possa ser usado para modelar situaç~´oes diferentes daquelas para as quais foi originalmente projetado.
+
+**Todos os estereótipos são representados pelo** **nome** **entre dois asteriscos** *.
+
+**Exemplos de estereótipos**:
+- **extend:** É representada de forma muito semelhante a **inclusão**, diferenciando-se pelo fato de a seta apontar para o caso de uso que utiliza o caso de uso estendido, e por haver um estereótipo contendo o texto **extend**.
+- **include:** É representada por uma linha tracejada contendo uma seta em uma de suas extremidades, a qual aponta para o caso de uso incluido no caso de uso posicionado na outra extremidade da linha. Costumam tambem apresentar um estereótipo que contém o texto **include**
+- **system**
+- **generalização/especialização:** É representada por uma linha com uma seta mais grossa, que indica qual o caso de uso geral (para o qual a seta aponta) e quais os casos de uso especializados (os que se encontram na outra extremidade da seta, apontando para o caso de uso geral). **ex:** 'Abrir Conta Comum' é o caso de uso geral, e (Abrir Conta Especial, Abrir Conta Poupança) são especializações do caso de uso **Abrir Conta Comum** e detalham as particularidades em sua própria documentação.
+- **restrições em associações de extensão:** Pode-se acrescentar uma condição á associação de extensão por meio de uma nota explicativa, determinando a condição para que o caso de uso seja executado. A seta tracehada que une o componente é chamada âncora.
+
+**Obs.** Exite uma grando quantidade de estereótipos que podem ser aplicados aos mais diversos componentes da UML. O engenheiro de software pode criar seus proprios estereótipos se necessário. Use a documentação oficial da UML como **referência**: https://www.omg.org/uml/ 
+
+## 5. Fronteira de Sistema
+
+Uma fronteira de sistema indentifica um classificador que contém um conjunto de casos de uso. Permite identificar um subsistema ou mesmo um sistema completo, além de destacar o  que está contido no sistema e o que não está.
+
+- Atores são externos ao sistema, enquanto casos de uso são internos.
+- É representada por um retêngulo envolvendo os casos de uso nela contidos, além de um título que a descreve.
