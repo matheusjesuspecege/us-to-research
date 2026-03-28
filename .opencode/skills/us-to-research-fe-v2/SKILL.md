@@ -21,11 +21,11 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 ### 1. Receber o requisito
 
-- Solicite ao usuário (se não fornecido) o **nome da feature** no formato `nome-da-feature`
+- Solicite ao usuário (se não fornecido) o nome da feature no formato kebab-case.
 
 ### 2. Verificar a existencia da feature
 
-- Verique a existencia do **prd.md** e **research.md** da feature que está localizada em **/specs/features/[nome-da-feature]/*.md**
+- Verique a existencia do **prd.md** e **research.md** da feature que está localizada em **/specs/features/[nome]/*.md**
 - Se a feature NÃO existir, execute a etapa **2.2 Criar uma nova feature**
 - Se a feature existir, execute a etapa **2.3 Atualizar feature existente**
 
@@ -51,12 +51,30 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 ### Gravar em uma feature existente
 
-- Exiba a mensagem "Está no modo feature existente"
-- encerrar
-
+- Analise o arquivo **pr.md** que foi atualizado com as atualizações forneceridas pelo usuário.
+- Analise o **research.md** atual da feature e compare tudo que deverá ser atualizado para manter os arquivos sincronizados e atualizados corretamente.
+- Grave o conteúdo atualizado no arquivo **research.md** seguindo a estrutuda definida na seção **Estrutura do arquivo**
 
 ---
+
 ## Estrutura do arquivo
+
+
+### 1. Atores
+
+Os atores representam papeis desempenhados pelos diversos usuarios que interagem com os serviços e funções do sistema.
+- um ator pode representar algum hardware ou outro software que interaja com o sistema. 
+- Na maioria das vezes, um ator representará uma pessoa que utilizará o sistema. 
+- Cada ator deve ter um nome e um estereótipo ex `<<system>>` que torna explicito que não é um ator humano, e sim sistemas de software ou hardware.
+- Em resumo um ator é um usuário que pode representar mais de um papel no sistema
+
+**Obs.** A utilização de estereótipo de sistemas de software ou hardware não é obrigatório, é apenas recomendado para destacar a caracteristica especial que o diferencia dos atores mais comuns.
+
+**Consulte:** `./references/actor-and-uc.md` para saber como identificar atores.
+
+### 2. Casos de Uso
+
+- TODO
 
 ---
 
