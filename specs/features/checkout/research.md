@@ -2,70 +2,68 @@
 
 ## 1. Atores
 
-| Ator | Descrição | Estéreotipo |
-|------|-----------|-------------|
-| Participante | Usuário que realiza a compra ou inscrição em um evento | - |
-| Sistema de Pagamento | Sistema integrado que processa pagamentos (Pay, operadores de cartão) | system |
-| Sistema Financeiro | Sistema que processa Pix e Boleto | system |
+| Ator | Descrição | Estéreo tipo |
+|------|-----------|--------------|
+| Participante | Usuário que está realizando a compra de ingressos em um evento | |
+| Sistema de Pagamento | Sistema externo que processa os pagamentos (Pix, Cartão, Boleto) | <system> |
 
 ## 2. Casos de Uso
 
 | UC | Nome | Ator Principal | Tipo |
 |----|------|----------------|------|
-| [UC01](./uc01/uc01.md) | Preencher Dados dos Participantes | Participante | Primário |
-| [UC02](./uc02/uc02.md) | Selecionar Responsável pelos Ingressos | Participante | Primário |
-| [UC03](./uc03/uc03.md) | Selecionar Método de Pagamento | Participante | Primário |
-| [UC04](./uc04/uc04.md) | Preencher Dados do Comprador | Participante | Primário |
-| [UC05](./uc05/uc05.md) | Aplicar Cupom de Desconto | Participante | Secundário |
-| [UC06](./uc06/uc06.md) | Finalizar Checkout com Cartão de Crédito | Participante | Primário |
-| [UC07](./uc07/uc07.md) | Finalizar Checkout com Pix | Participante | Primário |
-| [UC08](./uc08/uc08.md) | Finalizar Checkout com Boleto | Participante | Primário |
-| [UC09](./uc09/uc09.md) | Finalizar Checkout Gratuito | Participante | Primário |
-| [UC10](./uc10/uc10.md) | Criar Conta Automaticamente | Participante | Secundário |
-| [UC11](./uc11/uc11.md) | Exibir Tela de Confirmação | Participante | Primário |
+| UC01 | Preencher dados dos participantes | Participante | Primário |
+| UC02 | Selecionar responsável pelos ingressos | Participante | Primário |
+| UC03 | Selecionar método de pagamento | Participante | Primário |
+| UC04 | Preencher dados do comprador | Participante | Primário |
+| UC05 | Aplicar cupom de desconto | Participante | Secundário |
+| UC06 | Finalizar compra | Participante | Primário |
+| UC07 | Criar conta automaticamente | Participante | Primário |
+| UC08 | Processar pagamento via cartão | Participante | Primário |
+| UC09 | Processar pagamento via Pix | Participante | Primário |
+| UC10 | Processar pagamento via boleto | Participante | Primário |
+| UC11 | Exibir tela de confirmação | Participante | Primário |
 
-## 3. Associações
+## 3. Documentação dos Casos de Uso
 
-| Ator | Caso de Uso | Tipo de Associação |
-|------|-------------|-------------------|
-| Participante | UC01 - Preencher Dados dos Participantes | - |
-| Participante | UC02 - Selecionar Responsável pelos Ingressos | - |
-| Participante | UC03 - Selecionar Método de Pagamento | - |
-| Participante | UC04 - Preencher Dados do Comprador | - |
-| Participante | UC05 - Aplicar Cupom de Desconto | - |
-| Participante | UC06 - Finalizar Checkout com Cartão de Crédito | - |
-| Participante | UC07 - Finalizar Checkout com Pix | - |
-| Participante | UC08 - Finalizar Checkout com Boleto | - |
-| Participante | UC09 - Finalizar Checkout Gratuito | - |
-| Participante | UC10 - Criar Conta Automaticamente | - |
-| Participante | UC11 - Exibir Tela de Confirmação | - |
-| Sistema de Pagamento | UC06 - Finalizar Checkout com Cartão de Crédito | include |
-| Sistema Financeiro | UC07 - Finalizar Checkout com Pix | include |
-| Sistema Financeiro | UC08 - Finalizar Checkout com Boleto | include |
+Consulte os arquivos individuais na pasta `./uc/` para detalhamento de cada caso de uso.
 
-## 4. Regras de Comportamento por Tipo de Ingresso
+### 3.1 Casos de Uso Gerados
 
-### Checkout Nominal Pago
-- Exibe Bloco 1 com campos por participante
-- Exibe Bloco 2 com dropdown de responsável
-- Exibe Bloco 3 com métodos de pagamento
-- Cria conta automaticamente com dados do responsável pelos ingressos ao concluir
+- [UC01 - Preencher dados dos participantes](./uc/uc-01.md)
+- [UC02 - Selecionar responsável pelos ingressos](./uc/uc-02.md)
+- [UC03 - Selecionar método de pagamento](./uc/uc-03.md)
+- [UC04 - Preencher dados do comprador](./uc/uc-04.md)
+- [UC05 - Aplicar cupom de desconto](./uc/uc-05.md)
+- [UC06 - Finalizar compra](./uc/uc-06.md)
+- [UC07 - Criar conta automaticamente](./uc/uc-07.md)
+- [UC08 - Processar pagamento via cartão](./uc/uc-08.md)
+- [UC09 - Processar pagamento via Pix](./uc/uc-09.md)
+- [UC10 - Processar pagamento via boleto](./uc/uc-10.md)
+- [UC11 - Exibir tela de confirmação](./uc/uc-11.md)
 
-### Checkout Nominal Gratuito
-- Exibe Bloco 1 com campos por participante
-- Exibe Bloco 2 com dropdown de responsável
-- Não exibe Bloco 3 com campos de pagamento
-- Cria conta automaticamente com dados do responsável pelos ingressos ao concluir
+## 4. Associações
 
-### Checkout Não Nominal Pago
-- Não exibe Bloco 1
-- Exibe Bloco 2 sem dropdown
-- Exibe Bloco 3 com métodos de pagamento
-- Cria conta automaticamente com dados do responsável pelos ingressos ao concluir
+| Ator | Caso de Uso | Associação |
+|------|--------------|------------|
+| Participante | UC01 | |
+| Participante | UC02 | |
+| Participante | UC03 | |
+| Participante | UC04 | |
+| Participante | UC05 | |
+| Participante | UC06 | |
+| Participante | UC07 | |
+| Participante | UC08 | |
+| Participante | UC09 | |
+| Participante | UC10 | |
+| Participante | UC11 | |
+| Sistema de Pagamento | UC08 | <include> |
+| Sistema de Pagamento | UC09 | <include> |
+| Sistema de Pagamento | UC10 | <include> |
 
-### Checkout Não Nominal Gratuito
-- Exige autenticação do participante antes de acessar o checkout
-- Não exibe Bloco 1
-- Exibe Bloco 2
-- Não exibe Bloco 3
-- Usa conta do usuário autenticado
+## 5. Inclusão
+
+| Caso de Uso | Include |
+|-------------|---------|
+| UC06 - Finalizar compra | UC08, UC09 ou UC10 (dependendo do método de pagamento) |
+| UC06 - Finalizar compra | UC07 - Criar conta automaticamente |
+| UC06 - Finalizar compra | UC11 - Exibir tela de confirmação |

@@ -3,7 +3,7 @@
 Os atores representam papeis desempenhados pelos diversos usuarios que interagem com os serviços e funções do sistema.
 - um ator pode representar algum hardware ou outro software que interaja com o sistema. 
 - Na maioria das vezes, um ator representará uma pessoa que utilizará o sistema. 
-- Cada ator deve ter um nome e um estereótipo ex **system** que torna explicito que não é um ator humano, e sim sistemas de software ou hardware.
+- Cada ator deve ter um nome e um estereótipo ex **system** entre dois sinais de menor (<) e dois de maior (>), que torna explicito que não é um ator humano, e sim sistemas de software ou hardware.
 - Em resumo um ator é um usuário que pode representar mais de um papel no sistema
 
 **Obs.** A utilização de estereótipo de sistemas de software ou hardware não é obrigatório, é apenas recomendado para destacar a caracteristica especial que o diferencia dos atores mais comuns.
@@ -40,7 +40,7 @@ Os casos de uso são usados para capturar os requisitos funcionais do sistema (s
 
 ### 2.2. Localização
 
-- Cada caso de uso e tudo relacionado é salvo em sua pasta propria dentro da pasta da feature. ex: `/specs/features/[name]/[uc-01]/uc-01.md` kebab-case.
+- Cada caso de uso e tudo relacionado deve ser salvo dentro de suas pastas individuais com o nome do caso de uso. ex: `/specs/features/[name]/[uc-01]/uc-01.md` kebab-case, cada feature em sua pasta propria.
 
 ### 2.3. Classificação
 
@@ -91,4 +91,51 @@ Representam interações ou relacionamentos entre os atores e os casos de uso e 
 
 **Exemplo:** Se o ator Cliente utiliza, de alguma forma, a funcionalidade de Abrir Conta, percebemos que o ator Cliente utiliza de alguma forma, a funcionalidade Abrir Conta, e que a informação referente a esse processo trafega nas duas direções.
 
----
+### 3.1. Generalização/Especialização
+
+Aplica os principios de **herança** da orientação a objetos permitindo que os passos descritos em um caso de uso sejam herdados por outros casos de uso que especializam o caso de uso original chamado geral. A generalização/especialização tambem pode ser aplicado sobre atores, o que é até mais comum.
+
+- Assim, é desnecessário colocar a mesma documentação para todos os casos de uso envolvidos, pois toda a estrutura de um caso de uso generalizado é herdada pelos casos de uso especializados.
+- Além disso, os casos de uso especializados herdam tambem quaisquer associações de **inclusão** ou **extensão** que o caso de uso geral venha a ter, bem como quaisquer associações com os atores que utilizam o caso de uso geral.
+- É representado pelo estereótipo que pode ser encontrado na seção **4. Estereótipos**.
+- Em situações de casos de uso especializados, deve conter o item **Caso de Uso Geral**, onde será especificado a partir de qual caso de uso geral eles foram especializados.
+
+**Obs.** use associações especializadas com parcimônia, em situações em que possam ser utilizadas para evitar a repetição de instruçôes, por exemplo.
+
+### 3.2. Inclusão
+
+A associação de **inclusão** é usada quando existe um cenário, situação ou rotina comum a mais de um caso de uso. Quando isso ocorre, a documentação dessa rotina é oclocada em um caso de uso específico para que outros casos de uso utilizem esse serviço, evitando-se descrever uma mesma sequencia de passos em vários casos de uso, poupando tempo e facilitando futuras manutenções.
+
+- Os relacionamentos de inclusão indicam uma obrigatoriedade, ou seja, quando um determinado caso de uso tem um relacionamento de inclusão com outro, a execução do primeiro obriga também a execução do segundo. pode ser comparado a uma **sub-rotina**.
+- É representado pelo estereótipo que pode ser encontrado na seção **4. Estereótipos**.
+
+### 3.3. Extensão
+
+As associações de **extensão** são usadas para descrever cenários opcionais que podem ser estendidos pelos comportamentos de outros casos de uso. 
+
+- Descrevem cenários que apenas serão executados em situações específicas quando determinadas condições forem satisfeitas.
+- Indicam a necessidade de um teste no comportamento de um caso de uso para determinar se é necessário executar também o comportamento (os passos) de um caso de uso estendido.
+- Representam situações que não ocorrem sempre, o que não significa que sejam incomuns. 
+- Tem uma representação semelhante a **inclusão**, sendo representadas por um alinha tracejada, diferenciando-se pelo fato de a seta apontar para o caso de uso que utiliza o o caso de uso estendido.
+- É representado pelo estereótipo que pode ser encontrado na seção **4. Estereótipos**.
+
+**Exemplo:** Em um formulário de login em que o cliente deverá informar seu nome-login e senha para poder se autenticar no sistema. No cenário ideal desse processo, o cliente informará um nome-login e senha válidos e lhe será permitido acessar o software. Contudo, pode acontecer de o cliente estar acessando a esse formulario pela primeira vez e não possuir cadastro no sistema. Ao prever essa possibilidade, o formuario permite que o cliente se registre, apresentando a opção de pressionar o botão **Autoregistrar** para se cadastrar no sistema. Obviamente, o cliente só fará isso na primeira vez, seguindo o processo normal nas vezes seguintes. Uma vez que o processo de Autoregistrar poderá ser chamado a partir do processo de **Login**, mediante a condiçção de o cliente nao estar cadastrando.
+
+## 4. Estereótipos
+
+Todos os estereótipos são representados pelo **nome** entre dois sinais de menor (<) e dois de maior (>).
+
+**Exemplos de estereótipos**:
+- **extend:** É representada de forma muito semelhante a **inclusão**, diferenciando-se pelo fato de a seta apontar para o caso de uso que utiliza o caso de uso estendido, e por haver um estereótipo contendo o texto **extend** entre dois sinais de menor (<) e dois de maior (>).
+- **include:** É representada por uma linha tracejada contendo uma seta em uma de suas extremidades, a qual aponta para o caso de uso incluido no caso de uso posicionado na outra extremidade da linha. Costumam tambem apresentar um estereótipo que contém o texto **include:** entre dois sinais de menor (<) e dois de maior (>).
+- **system:** entre dois sinais de menor (<) e dois de maior (>).
+- **generalização/especialização:** É representada por uma linha com uma seta mais grossa, que indica qual o caso de uso geral (para o qual a seta aponta) e quais os casos de uso especializados (os que se encontram na outra extremidade da seta, apontando para o caso de uso geral). **ex:** 'Abrir Conta Comum' é o caso de uso geral, e (Abrir Conta Especial, Abrir Conta Poupança) são especializações do caso de uso **Abrir Conta Comum** e detalham as particularidades em sua própria documentação.
+- **restrições em associações de extensão:** Pode-se acrescentar uma condição á associação de extensão por meio de uma nota explicativa, determinando a condição para que o caso de uso seja executado. A seta tracehada que une o componente é chamada âncora.
+
+## 5. Restrições em Associações de Extensão
+
+São utilizadas para definir validações, consistências, condições etc... que devem ser aplicadas a um determinado componente ou situação.
+
+- Ao tratar de extensôes, ás vezes nem sempre fica claro qual é a condição para um caso de uso estendido seja executado. Assim, pode-se acrescentar um estereótio que pode ser localizado na seção **4. Estereótipos**.
+
+**Obs.** essas restrições nada mais são do que regras de negócio referentes ao processo.

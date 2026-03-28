@@ -84,6 +84,26 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 **Consulte:** `./references/actor-and-uc.md` na seção **3. Associações** para mais detalhes.
 
+### 5. Generalização/Especialização
+
+**Consulte:** `./references/actor-and-uc.md` na seção **3.1. Generalização/Especialização** para mais detalhes.
+
+### 6. Inclusão
+
+**Consulte:** `./references/actor-and-uc.md` na seção **3.2. Inclusão** para mais detalhes.
+
+### 7. Extensão
+
+**Consulte:** `./references/actor-and-uc.md` na seção **3.3. Extensão** para mais detalhes.
+
+### 8. Estereótipos
+
+**Consulte:** `./references/actor-and-uc.md` na seção **4. Estereótipos** para mais detalhes.
+
+### 8. Restrições em Associações de Extensão
+
+**Consulte:** `./references/actor-and-uc.md` na seção **5. Restrições em Associações de Extensão** para mais detalhes.
+
 ---
 
 ## Output
