@@ -67,55 +67,24 @@ Outra maneira de identificar casos de uso é verificar a lista de requisitos fun
 
 A documentação de caso de uso representa o comportamento de um caso de uso da maneira o mais completa possível, mas sem detalhes técnicos de implementação. 
 
-**Exemplo de Estrutura de Documentação de um Caso de Uso**
-
-## UC01 - Abrir Conta
-
-- **Caso de Uso Geral:** Nome do caso de uso geral a partir do qual o caso de uso atual foi derivado
-- **Ator Principal:** Funcionário
-- **Atores Secundários:** Cliente (Não é obrigatório declarar um ator secundário, visto que pode existir ou não)
-- **Resumo:** Esse caso de uso descreve as etapas percorridas por um cliente, intermediado por um funcionário, para abrir uma conta-corrente
-- **Pré-condições:** O pedido de abertura precisa ter sido previamente aprovado
-- **Pós-condições:** É necessário realizar um depósito inicial
-
-### Cenário Principal
-
-No cenário principal, muitas vezes se representa um "caminho feliz" onde tudo funciona conforme o esperado. 
-
-Ações do Ator | Ações do Sistema |
-  ----------------|-------------------
-  | 1. O funcionário informa o CPF ou CNPJ do cliente e consulta seu registro | 2. Consultar cliente por seu CPF ou CNPJ |
-  | 3. O cliente informa a senha da conta | 4. Abrir conta |
-  | 5. O cliente fornece um valor a ser depositado | 6. Executar caso de uso "Realizar Depósito" para registrar o depósito do cliente. 
-  | | 6.1. Emitir cartão da conta |
-
-### Restrições/Validações
-
-São as regras de negócio, ou seja, regras que determinam as condições para que o processo seja executado.
-
-1. Para abrir uma conta-corrente, é preciso ser maior de idade
-2. O valor mínimo de depósito é R$ 5,00
-3. O cliente precisa fornecer algum comprovante de residência
-
-### Cenário Alternativo - Manutenção do Cadastro de Cliente
-
-Os cenários alternativos podem ser executados ou não, dependendo se uma condição for satisfeita.
-
-Ações do Ator | Ações do Sistema |
-  ----------------|-------------------
-  | | 1. Executar o Caso de Uso "Gerenciar Clientes", para registrar um novo cliente ou atualizar o cadastro do cliente consultado |
-
-### Cenário de Exceção - Cliente menor de idade
-
-Ações que devem ser tomadas em situações em que um cenário principal ou alternativo não pode ser concluído, em razão de alguma regra de negócio ter sido transgredida, por exemplo.
-
-Ações do Ator | Ações do Sistema |
-  ----------------|-------------------
-  | | 1. Comunicar ao cliente que ele não tem idade mínima para possuir uma conta-corrente |
-  | | 2. Recusar o pedido |
-
-### Requisitos Não-Funcionais
-
-No final da documentação, insirir os **requisitos não funcionais** que especificam condições de usabilidade, desempenho, confiabilidade ou segurança, por exemplo.
-
 **Obs.**: O detalhamento maior a nível de implementação, será feito em outra etapa posterior (**research-to-plan**). 
+
+Consulte `../assets/uc-spec-example.md` para um exemplo de **Estrutura de Documentação de um Caso de Uso**.
+
+---
+
+## 3. Associações
+
+Representam interações ou relacionamentos entre os atores e os casos de uso e os relacionamentos entre os casos de uso e outros casos de uso. Recebem nomes especiais, como **include**, **extends**, **generalization**.
+
+- Uma associação entre um ator e um caso de uso demonstra que o ator utiliza de alguma maneira a funcionalidade do sistema representada pelo caso de uso em questão, seja requisitando a execução dessa função, seja recebendo o resultado produzido por ela a pedido de outro ator.
+
+**A associação entre um ator e um caso de uso é representada por uma linha ligando o ator ao caso de uso, podendo ocorrer que as extremidades da linha contenham setas, indicando o sentido em que as informações trafegam:**
+
+- Se estas setas são fornecidas pelo ator ao caso de uso, se são transmitidas pelo caso de uso ao ator ou ambos (nesse ultimo caso, a linha não tem setas, significando que as informações são transmitidas nas duas direções)
+- As setas tambem servem para indicar quem inicia a comunicação.
+- Uma associação pode ter uma descrição propria quando é necessário esclarecer a natureza da informação que está sendo transmitida ou dar um nome a esta, se isso for necessário.
+
+**Exemplo:** Se o ator Cliente utiliza, de alguma forma, a funcionalidade de Abrir Conta, percebemos que o ator Cliente utiliza de alguma forma, a funcionalidade Abrir Conta, e que a informação referente a esse processo trafega nas duas direções.
+
+---

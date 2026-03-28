@@ -66,11 +66,15 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 ### 2. Casos de Uso
 
-**Consulte:** `./references/actor-and-uc.md` na seção **2. Casos de Uso** para mais detalhes sobre **Casos de Uso**.
+**Consulte:** `./references/actor-and-uc.md` na seção **2. Casos de Uso** para mais detalhes.
 
 ### 3. Documentação dos Casos de Uso
 
-**Consulte:** `./references/actor-and-uc.md` na seção **3. Documentação dos Casos de Uso** para mais detalhes sobre **Casos de Uso**.
+**Consulte:** `./references/actor-and-uc.md` na seção **2.3. Documentação dos Casos de Uso** para mais detalhes.
+
+### 4. Associações
+
+**Consulte:** `./references/actor-and-uc.md` na seção **3. Associações** para mais detalhes.
 
 ---
 
