@@ -3,7 +3,7 @@
 Os atores representam papeis desempenhados pelos diversos usuarios que interagem com os serviços e funções do sistema.
 - um ator pode representar algum hardware ou outro software que interaja com o sistema. 
 - Na maioria das vezes, um ator representará uma pessoa que utilizará o sistema. 
-- Cada ator deve ter um nome e um estereótipo ex `<<system>>` que torna explicito que não é um ator humano, e sim sistemas de software ou hardware.
+- Cada ator deve ter um nome e um estereótipo ex ```<<system>>``` que torna explicito que não é um ator humano, e sim sistemas de software ou hardware.
 - Em resumo um ator é um usuário que pode representar mais de um papel no sistema
 
 **Obs.** A utilização de estereótipo de sistemas de software ou hardware não é obrigatório, é apenas recomendado para destacar a caracteristica especial que o diferencia dos atores mais comuns.
@@ -51,7 +51,7 @@ Os casos de uso podem ser classificados em dois tipos: **primários** ou **secun
 
 ### 2.2. Como identificar Casos de Uso
 
-Para identificar os casos de uso, é necessário determinar as funcionalidades necessárias ao software, ou seja:
+**Para identificar os casos de uso, é necessário determinar as funcionalidades necessárias ao software, ou seja:**
 - Funçôes
 - Serviços que correspondem aos requisitos funcionais declarados como necessários ao sistema
 
