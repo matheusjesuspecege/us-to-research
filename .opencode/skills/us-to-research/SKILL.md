@@ -48,7 +48,7 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 - Crie o arquivo **prd.md** na pasta da feature e informe ao usuário que o arquivo foi criado na pasta
 - Solicite ao usuário que adicione o conteúdo do requisito para que possa iniciar o processo de geração do **research.md**
 - Execute a seção **Opcoes do terminal** com a intenção de **criar uma nova feature**
-- Para cada caso de uso localizado na seção **Documentação dos Casos de Uso**, salve usando as instruções localizadas em `./references/actor-and-uc.md` na seção **2.2. Localização**
+- Para cada caso de uso localizado na seção **Documentação dos Casos de Uso**, salve usando as instruções localizadas em `./references/actor-and-uc.md` na seção **2.2. Localização** usando de recursos visuais que facilite a compreensão humana.
 - Grave o conteúdo atualizado no arquivo **research.md** seguindo a estrutuda definida na seção **Estrutura do arquivo** removendo os casos de uso que foram para os arquivos separados e adicionando no lugar a referencia até o arquivo do caso de uso gerado usando de recursos visuais que facilite a compreensão humana.
 
 ---
@@ -69,25 +69,25 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 ### 1. Contexto do Produto
 
-Breve resumo de no máximo 7-12 linhas.
+Breve resumo de no máximo (7 linhas).
 
 ---
 
 ### 2. Problema do Negócio
 
-Descreve o problema que o PO está tentando resolver.
+Descreve o problema que o PO está tentando resolver (7 linhas).
 
 ---
 
 ### 3. Objetivo da Feature
 
-Qual resultado esperado para o produto.
+Qual resultado esperado para o produto (7 linhas).
 
 ---
 
 ### 4. Cenário de Uso
 
-Descrição narrativa de como o usuário interage com a funcionalidade.
+Descrição narrativa de como o usuário interage com a funcionalidade (7 linhas).
 
 ---
 
