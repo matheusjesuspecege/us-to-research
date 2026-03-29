@@ -1,28 +1,32 @@
 # Diretrizes para Agentes
 
-Este repositório contém skills do OpenCode para tarefas de pesquisa e investigação:
-
-- **us-to-research-fe-v2**: Skill focado em pesquisa frontend
+Este repositório contém a skill **us-to-research** do OpenCode para conversão de requisitos em research.md estruturado.
 
 ## Estrutura do Projeto
 
 ```
 us-to-research/
-├── README.md
-├── AGENTS.md
-└── skills/
-    ├── us-to-research-fe-v2/
-    │   └── SKILL.md
+├── README.md                    # Documentação principal
+├── AGENTS.md                    # Diretrizes para agentes
+├── opencode.json                # Configuração do OpenCode
+└── .opencode/
+    └── skills/
+        └── us-to-research/
+            ├── SKILL.md         # Skill principal
+            ├── references/
+            │   └── actor-and-uc.md    # Referência para atores e casos de uso
+            └── assets/
+                └── uc-spec-example.md # Exemplo de especificação de UC
 ```
 
 ## Fluxo de Git
 
 - Use commits convencionais: `feat:`, `fix:`, `docs:`, `chore:`
 - Formato da mensagem de commit: `tipo(escopo): descrição`
-- Exemplo: `feat(fe): adicionar skill us-to-research-fe para pesquisa frontend`
+- Exemplo: `feat: adicionar nova skill us-to-research`
 
 ## Documentação
 
-- Atualize o README.md ao adicionar novas skills
-- Documente propósito, gatilhos e exemplos de uso da skill
-- Mantenha os arquivos SKILL.md autocontidos e bem estruturados
+- Mantenha o README.md atualizado com a documentação da skill
+- Documente propósito, gatilhos e exemplos de uso no README.md
+- O arquivo SKILL.md deve ser autocontido e bem estruturado
