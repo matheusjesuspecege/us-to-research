@@ -67,76 +67,109 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 ## Estrutura do arquivo
 
+### 1. Contexto do Produto
 
-### 1. Atores
+Breve resumo de no máximo 7 linhas.
+
+---
+
+### 2. Problema do Negócio
+
+Descreve o problema que o PO está tentando resolver.
+
+---
+
+### 3. Objetivo da Feature
+Qual resultado esperado para o produto.
+
+---
+
+### 4. Cenário de Uso
+Descrição narrativa de como o usuário interage com a funcionalidade.
+
+---
+
+### 5. Atores
 
 **Consulte:** `./references/actor-and-uc.md` na seção **1. Atores** para mais detalhes sobre **Atores**.
 
 ---
 
-### 2. Casos de Uso
+### 6. Casos de Uso
 
 **Consulte:** `./references/actor-and-uc.md` na seção **2. Casos de Uso** para mais detalhes.
 
 ---
 
-### 3. Documentação dos Casos de Uso
+### 7. Documentação dos Casos de Uso
 
 **Consulte:** `./references/actor-and-uc.md` na seção **2.5. Documentação dos Casos de Uso** para mais detalhes.
 
 ---
 
-### 4. Associações
+### 8. Associações
 
 **Consulte:** `./references/actor-and-uc.md` na seção **3. Associações** para mais detalhes.
 
 ---
 
-### 5. Generalização/Especialização
+### 9. Generalização/Especialização
 
 **Consulte:** `./references/actor-and-uc.md` na seção **3.1. Generalização/Especialização** para mais detalhes.
 
 ---
 
-### 6. Inclusão
+### 10. Inclusão
 
 **Consulte:** `./references/actor-and-uc.md` na seção **3.2. Inclusão** para mais detalhes.
 
 ---
 
-### 7. Extensão
+### 11. Extensão
 
 **Consulte:** `./references/actor-and-uc.md` na seção **3.3. Extensão** para mais detalhes.
 
 ---
 
-### 8. Restrições em Associações de Extensão
+### 12. Restrições em Associações de Extensão
 
 **Consulte:** `./references/actor-and-uc.md` na seção **3.4. Restrições em Associações de Extensão** para mais detalhes.
 
 ---
 
-### 9. Estereótipos
+### 13. Estereótipos
 
 **Consulte:** `./references/actor-and-uc.md` na seção **4. Estereótipos** para mais detalhes.
 
 ---
 
-### 10. Pontos de Extensão
+### 14. Pontos de Extensão
 
 **Consulte:** `./references/actor-and-uc.md` na seção **3.5. Pontos de Extensão** para mais detalhes.
 
 ---
 
-### 11. Multiplicidade
+### 15. Multiplicidade
 
 **Consulte:** `./references/actor-and-uc.md` na seção **3.6. Multiplicidade** para mais detalhes.
 
 ---
 
-### 12. Fronteira de Sistema
+### 16. Fronteira de Sistema
 
 **Consulte:** `./references/actor-and-uc.md` na seção **5. Fronteira de Sistema** para mais detalhes.
+
+---
+
+### 17. Jobs To Be Done
+- Job principal:
+- Jobs secundários:
+
+---
+
+### 18. Métricas de Sucesso
+- Métrica de produto
+- Métrica técnica
 
 ---
 

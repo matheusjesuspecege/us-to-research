@@ -40,7 +40,7 @@ Os casos de uso são usados para capturar os requisitos funcionais do sistema (s
 
 ### 2.2. Localização
 
-- Cada caso de uso e tudo relacionado deve ser salvo dentro de suas pastas individuais com o nome do caso de uso. ex: `/specs/features/[name]/[uc-01]/uc-01.md` kebab-case, cada feature em sua pasta propria.
+- Cada caso de uso e tudo relacionado deve ser salvo dentro de suas pastas individuais com o nome do caso de uso. ex: `/specs/features/[name]/[uc-01-nome-feature]/uc-01-nome-feature.md` kebab-case, cada feature em sua pasta propria.
 
 ### 2.3. Classificação
 
@@ -151,9 +151,9 @@ Os estereótipos possibilitam certo grau de extensibilidade aos componentes ou a
 **Todos os estereótipos são representados pelo** **nome** **entre dois asteriscos** *.
 
 **Exemplos de estereótipos**:
-- **extend:** É representada de forma muito semelhante a **inclusão**, diferenciando-se pelo fato de a seta apontar para o caso de uso que utiliza o caso de uso estendido, e por haver um estereótipo contendo o texto **extend**.
-- **include:** É representada por uma linha tracejada contendo uma seta em uma de suas extremidades, a qual aponta para o caso de uso incluido no caso de uso posicionado na outra extremidade da linha. Costumam tambem apresentar um estereótipo que contém o texto **include**
-- **system**
+- **`<<extend>>`:** É representada de forma muito semelhante a **inclusão**, diferenciando-se pelo fato de a seta apontar para o caso de uso que utiliza o caso de uso estendido, e por haver um estereótipo contendo o texto **extend**.
+- **`<<include>>`:** É representada por uma linha tracejada contendo uma seta em uma de suas extremidades, a qual aponta para o caso de uso incluido no caso de uso posicionado na outra extremidade da linha. Costumam tambem apresentar um estereótipo que contém o texto **include**
+- **`<<system>>`**
 - **generalização/especialização:** É representada por uma linha com uma seta mais grossa, que indica qual o caso de uso geral (para o qual a seta aponta) e quais os casos de uso especializados (os que se encontram na outra extremidade da seta, apontando para o caso de uso geral). **ex:** 'Abrir Conta Comum' é o caso de uso geral, e (Abrir Conta Especial, Abrir Conta Poupança) são especializações do caso de uso **Abrir Conta Comum** e detalham as particularidades em sua própria documentação.
 - **restrições em associações de extensão:** Pode-se acrescentar uma condição á associação de extensão por meio de uma nota explicativa, determinando a condição para que o caso de uso seja executado. A seta tracehada que une o componente é chamada âncora.
 
