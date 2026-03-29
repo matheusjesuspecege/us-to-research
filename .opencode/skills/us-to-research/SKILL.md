@@ -10,7 +10,7 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 - Caso a feature não exista, é criada a pasta da feature com um arquivo **prd.md** onde será adicionado o conteudo do requisito escrito pelo Product Owner para conversão.
 - O usuário é avisado que o arquivo foi criado e a skill irá aguardar a confirmação de que o conteudo do requisito foi adicionado no prd.md.
 - Após a confirmação do usuário, a skill irá ler o conteudo do arquivo prd.md e caso o requisito esteja vago, irá realizar perguntas especificas para remover 'ambiguidades e ruídos' da especificação.
-- No final, o arquivo research.md é gerado ou atualizado na pasta da feature seguindo a estrutura, padrôes e especificações definidas nesta skill.
+- No final, o arquivo research.md é gerado ou atualizado na pasta da feature seguindo a estrutura, padrôes e especificações definidas nesta skill usando de recursos visuais que facilite a compreensão humana.
 
 ---
 
@@ -49,7 +49,7 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 - Solicite ao usuário que adicione o conteúdo do requisito para que possa iniciar o processo de geração do **research.md**
 - Execute a seção **Opcoes do terminal** com a intenção de **criar uma nova feature**
 - Para cada caso de uso localizado na seção **Documentação dos Casos de Uso**, salve usando as instruções localizadas em `./references/actor-and-uc.md` na seção **2.2. Localização**
-- Grave o conteúdo atualizado no arquivo **research.md** seguindo a estrutuda definida na seção **Estrutura do arquivo** removendo os casos de uso que foram para os arquivos separados e adicionando no lugar a referencia até o arquivo do caso de uso gerado.
+- Grave o conteúdo atualizado no arquivo **research.md** seguindo a estrutuda definida na seção **Estrutura do arquivo** removendo os casos de uso que foram para os arquivos separados e adicionando no lugar a referencia até o arquivo do caso de uso gerado usando de recursos visuais que facilite a compreensão humana.
 
 ---
 
@@ -61,7 +61,7 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 - Execute a seção **Opcoes do terminal** com a intenção de **atualizar uma feature existente** solicitando ao usuário que atualize o arquivo **prd.md** com as novas mudanças que serão atualizadas
 - Analise o arquivo **prd.md** que foi atualizado com as atualizações forneceridas pelo usuário.
 - Analise o **research.md** atual da feature e compare tudo que deverá ser atualizado para manter os arquivos sincronizados e atualizados corretamente, com a maxima atenção para não remover o conteúdo atual que já está aprovado, ou seja, inserindo e adaptando somente o que for realmente necessário.
-- Grave o conteúdo atualizado no arquivo **research.md** e em todos os **Casos de Uso** que precisam ser atualizados.
+- Grave o conteúdo atualizado no arquivo **research.md** e em todos os **Casos de Uso** que precisam ser atualizados usando de recursos visuais que facilite a compreensão humana.
 
 ---
 
@@ -69,7 +69,7 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 ### 1. Contexto do Produto
 
-Breve resumo de no máximo 7 linhas.
+Breve resumo de no máximo 7-12 linhas.
 
 ---
 
@@ -80,11 +80,13 @@ Descreve o problema que o PO está tentando resolver.
 ---
 
 ### 3. Objetivo da Feature
+
 Qual resultado esperado para o produto.
 
 ---
 
 ### 4. Cenário de Uso
+
 Descrição narrativa de como o usuário interage com a funcionalidade.
 
 ---
@@ -99,6 +101,8 @@ Descrição narrativa de como o usuário interage com a funcionalidade.
 
 **Consulte:** `./references/actor-and-uc.md` na seção **2. Casos de Uso** para mais detalhes.
 
+**Obs.** deve-se procurar evitar desenvolver casos de uso complexos sempre que possível.
+
 ---
 
 ### 7. Documentação dos Casos de Uso
@@ -111,63 +115,51 @@ Descrição narrativa de como o usuário interage com a funcionalidade.
 
 **Consulte:** `./references/actor-and-uc.md` na seção **3. Associações** para mais detalhes.
 
----
+**Obs.** NÃO é obrigatória a aplicação de associações de inclusão, extensão ou especialização, visto que só devem ser usadas quando for considerado necessário, de acordo com as necessidades do software que está sendo construido.
 
-### 9. Generalização/Especialização
+**8.1. Generalização/Especialização:**
 
-**Consulte:** `./references/actor-and-uc.md` na seção **3.1. Generalização/Especialização** para mais detalhes.
+- **Consulte:** `./references/actor-and-uc.md` na seção **3.1. Generalização/Especialização** para mais detalhes.
 
----
+**8.2. Inclusão:**
 
-### 10. Inclusão
+- **Consulte:** `./references/actor-and-uc.md` na seção **3.2. Inclusão** para mais detalhes.
 
-**Consulte:** `./references/actor-and-uc.md` na seção **3.2. Inclusão** para mais detalhes.
+**8.3. Extensão:**
 
----
+- **Consulte:** `./references/actor-and-uc.md` na seção **3.3. Extensão** para mais detalhes.
 
-### 11. Extensão
+**8.4. Restrições em Associações de Extensão:**
 
-**Consulte:** `./references/actor-and-uc.md` na seção **3.3. Extensão** para mais detalhes.
+- **Consulte:** `./references/actor-and-uc.md` na seção **3.4. Restrições em Associações de Extensão** para mais detalhes.
 
----
+**8.4. Estereótipos:**
 
-### 12. Restrições em Associações de Extensão
+- **Consulte:** `./references/actor-and-uc.md` na seção **4. Estereótipos** para mais detalhes.
 
-**Consulte:** `./references/actor-and-uc.md` na seção **3.4. Restrições em Associações de Extensão** para mais detalhes.
+**8.5. Pontos de Extensão:**
 
----
+- **Consulte:** `./references/actor-and-uc.md` na seção **3.5. Pontos de Extensão** para mais detalhes.
 
-### 13. Estereótipos
+**8.6. Multiplicidade:**
 
-**Consulte:** `./references/actor-and-uc.md` na seção **4. Estereótipos** para mais detalhes.
-
----
-
-### 14. Pontos de Extensão
-
-**Consulte:** `./references/actor-and-uc.md` na seção **3.5. Pontos de Extensão** para mais detalhes.
+- **Consulte:** `./references/actor-and-uc.md` na seção **3.6. Multiplicidade** para mais detalhes.
 
 ---
 
-### 15. Multiplicidade
-
-**Consulte:** `./references/actor-and-uc.md` na seção **3.6. Multiplicidade** para mais detalhes.
-
----
-
-### 16. Fronteira de Sistema
+### 9. Fronteira de Sistema
 
 **Consulte:** `./references/actor-and-uc.md` na seção **5. Fronteira de Sistema** para mais detalhes.
 
 ---
 
-### 17. Jobs To Be Done
+### 10. Jobs To Be Done
 - Job principal:
 - Jobs secundários:
 
 ---
 
-### 18. Métricas de Sucesso
+### 11. Métricas de Sucesso
 - Métrica de produto
 - Métrica técnica
 
@@ -176,7 +168,86 @@ Descrição narrativa de como o usuário interage com a funcionalidade.
 ## Output
 
 ```markdown
-Research foi (atualizado ou criado) com sucesso!
-UC gerados: X
-UC afetados: x
+# ✅ Research Concluído
+
+## Resumo da Operação
+
+| Propriedade | Valor |
+|-------------|-------|
+| Feature | [nome-da-feature] |
+| Tipo de operação | Criação / Atualização |
+| Data | [data/hora] |
+
+---
+
+## 📋 Decisões Tomadas
+
+Durante o processo, as seguintes ambiguidades foram identificadas e resolvidas:
+
+| # | Pergunta | Resposta |
+|---|----------|----------|
+| 1 | [Pergunta] | [Resposta do usuário] |
+| 2 | [Pergunta] | [Resposta do usuário] |
+
+---
+
+## 📁 Arquivos Gerados
+
+### Research Principal
+- `specs/features/[feature]/research.md`
+
+### Casos de Uso (Total: X)
+
+| UC | Nome | Tipo | Status |
+|----|------|------|--------|
+| UC-01 | [Nome] | Primário | ✅ Gerado |
+| UC-02 | [Nome] | Secundário | ✅ Gerado |
+| ... | ... | ... | ... |
+
+---
+
+## 📊 Conteúdo Incluído no Research
+
+### Seções do Research
+- ✅ Contexto do Produto
+- ✅ Problema do Negócio  
+- ✅ Objetivo da Feature
+- ✅ Cenário de Uso
+- ✅ Atores (X identificados)
+- ✅ Casos de Uso (X identificados)
+- ✅ Associações
+- ✅ Fronteira de Sistema
+- ✅ Jobs To Be Done
+- ✅ Métricas de Sucesso
+
+### Tópicos do PRD Migrados
+- Tópico X — [Nome] ✅
+- Tópico Y — [Nome] ✅
+- Tópico Z — [Nome] ⚠️ Placeholder (A definir com time dev)
+
+---
+
+## ⚠️ Items Pendentes / Placeholders
+
+| Item | Motivo | Ação Necessária |
+|------|--------|-----------------|
+| [Item] | [Motivo] | [Ação] |
+
+---
+
+## 📈 Estatísticas
+
+- **Casos de uso gerados:** X
+- **Casos de uso atualizados:** X
+- **Atores identificados:** X
+- **Associações documentadas:** X
+- **Ambiguidades resolvidas:** X / X
+
+---
+
+## 🔗 Próximos Passos
+
+1. Revisar o `research.md` gerado
+2. Validar os casos de uso com o PO
+3. Executar a skill **research-to-plan** para iniciar o planejamento técnico
 ```

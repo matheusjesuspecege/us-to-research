@@ -148,8 +148,6 @@ A multiplicidade em uma associação entre um ator e um caso de uso basicamente 
 Os estereótipos possibilitam certo grau de extensibilidade aos componentes ou associações da UML. além de permitir a identificação de componentes ou associações que, embora semelhantes aos outros, tenham alguma caracteristica que os diferencie, dando-lhes mais destaque no diagrama.
 - Podem atribuir funções extras a um componente, permitindo que este possa ser usado para modelar situaçôes diferentes daquelas para as quais foi originalmente projetado.
 
-**Todos os estereótipos são representados pelo** **nome** **entre dois asteriscos** *.
-
 **Exemplos de estereótipos**:
 - **`<<extend>>`:** É representada de forma muito semelhante a **inclusão**, diferenciando-se pelo fato de a seta apontar para o caso de uso que utiliza o caso de uso estendido, e por haver um estereótipo contendo o texto **extend**.
 - **`<<include>>`:** É representada por uma linha tracejada contendo uma seta em uma de suas extremidades, a qual aponta para o caso de uso incluido no caso de uso posicionado na outra extremidade da linha. Costumam tambem apresentar um estereótipo que contém o texto **include**
@@ -157,7 +155,7 @@ Os estereótipos possibilitam certo grau de extensibilidade aos componentes ou a
 - **generalização/especialização:** É representada por uma linha com uma seta mais grossa, que indica qual o caso de uso geral (para o qual a seta aponta) e quais os casos de uso especializados (os que se encontram na outra extremidade da seta, apontando para o caso de uso geral). **ex:** 'Abrir Conta Comum' é o caso de uso geral, e (Abrir Conta Especial, Abrir Conta Poupança) são especializações do caso de uso **Abrir Conta Comum** e detalham as particularidades em sua própria documentação.
 - **restrições em associações de extensão:** Pode-se acrescentar uma condição á associação de extensão por meio de uma nota explicativa, determinando a condição para que o caso de uso seja executado. A seta tracehada que une o componente é chamada âncora.
 
-**Obs.** Exite uma grando quantidade de estereótipos que podem ser aplicados aos mais diversos componentes da UML. O engenheiro de software pode criar seus proprios estereótipos se necessário. Use a documentação oficial da UML como **referência**: https://www.omg.org/uml/ exibindo os estereótipos entre asteriscos `**nome**` no lugar de sinal de menor (<) e maior (>).
+**Obs.** Existe uma grande quantidade de estereótipos que podem ser aplicados aos mais diversos componentes da UML. O engenheiro de software pode criar seus proprios estereótipos se necessário. Use a documentação oficial da UML como **referência**: https://www.omg.org/uml/ exibindo os estereótipos de maneira textual.
 
 ## 5. Fronteira de Sistema
 
