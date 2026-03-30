@@ -35,4 +35,8 @@ Ações que devem ser tomadas em situações em que um cenário principal ou alt
 ### Requisitos Não-Funcionais
 
 No final da documentação, insirir os **requisitos não funcionais** que especificam condições de usabilidade, desempenho, confiabilidade ou segurança, por exemplo.
+
+## Critérios de Aceite
+
+Critérios de aceitação, ou seja, todas as tarefas que precisam ser realizadas para que o caso de uso funcione corretamente e cumpra o seu proposito e objetivo. Deve ser ordenado de maneira verificável e compativel para servir de base para geração dos cenários de testes (BDD).
 ```

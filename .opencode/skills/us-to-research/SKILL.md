@@ -226,6 +226,7 @@ Durante o processo, as seguintes ambiguidades foram identificadas e resolvidas:
 - ✅ Fronteira de Sistema
 - ✅ Jobs To Be Done
 - ✅ Métricas de Sucesso
+- ✅ Critérios de Aceite
 
 ### Tópicos do PRD Migrados
 - Tópico X — [Nome] ✅
