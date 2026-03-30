@@ -18,6 +18,7 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 - **SIGA O REQUISITO ORIGINAL EXATAMENTE COMO FORNECIDO. NÃO INVENTE, NÃO ADICIONE E NÃO SUPONHA NADA QUE NÃO ESTEJA EXPRESSAMENTE DEFINIDO NA US.**
 - Se a US não menciona algo, não inclua no research. Se há ambiguidade, pergunte ao usuário antes de supor.
+- Caso seja necessário criar diagramas, utilize **mermaid:** https://mermaid.js.org ou **plantuml:** https://plantuml.com/
 
 ---
 
@@ -45,7 +46,7 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 ## Criar uma nova feature
 
-- Crie o arquivo **prd.md** na pasta da feature e informe ao usuário que o arquivo foi criado na pasta
+- Crie o arquivo **prd.md** na pasta da feature e informe ao usuário que o arquivo foi criado na pasta, com espaço para preencher com o requisito escrito pelo po, e considerações técnicas que o dev poderá preencher caso necessário.
 - Solicite ao usuário que adicione o conteúdo do requisito para que possa iniciar o processo de geração do **research.md**
 - Execute a seção **Opcoes do terminal** com a intenção de **criar uma nova feature**
 - Para cada caso de uso localizado na seção **Documentação dos Casos de Uso**, salve usando as instruções localizadas em `./references/actor-and-uc.md` na seção **2.2. Localização** usando de recursos visuais que facilite a compreensão humana.
@@ -101,7 +102,7 @@ Descrição narrativa de como o usuário interage com a funcionalidade (7 linhas
 
 **Consulte:** `./references/actor-and-uc.md` na seção **2. Casos de Uso** para mais detalhes.
 
-**Obs.** deve-se procurar evitar desenvolver casos de uso complexos sempre que possível.
+**Obs.** deve-se procurar evitar desenvolver casos de uso complexos sempre que possível, priorizando o funcionamento, eficacia e compreensão humana acima de enfeites visuais que não agregam.
 
 ---
 

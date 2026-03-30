@@ -18,3 +18,15 @@ A migração não deve alterar nenhuma das regras de negócio já existentes rel
 O acesso ao dashboard pelo menu lateral deve continuar funcionando para todos os organizadores com eventos ativos na plataforma, sem necessidade de qualquer ação adicional por parte deles;
 
 Caso a migração seja realizada com o ambiente de produção ativo, o time deve garantir que a substituição do componente ocorra de forma atômica, sem período de indisponibilidade do dashboard para os organizadores.
+
+## Descrição Técnica
+
+Atualmente o linka eventos funciona em um monorepo usando turborepo, e possui os seguintes projetos:
+- organizador(react/react query)
+- backoffice(react/react query)
+
+Atualmente o organizador utilzia powerbi como dashboard incorporado, e agora ele foi descontinuado e removido. No lugar foi contruido um novo dashboard nativo em react com react query que já está em funcionamento.
+
+O backoffice tambem usa o powerbi, e deverá ser removido para ser substituido pelo novo dashboard usado no organizador. Para isso, será criado um **package-dashboard** com os componentes e telas funcionando para que seja instanciado e usado por ambos os projetos.
+
+Esta tarefa é exclusivamente de migração do dashboard existente para o monorepo compartilhado, e uso nos dois projetos.
