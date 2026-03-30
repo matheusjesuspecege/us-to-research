@@ -4,17 +4,20 @@ description: "Converte requisitos abstratos escritos por Product Owners em um re
 license: MIT
 ---
 
+
+# Resumo
+
 Esta SKILL converte requisitos abstratos escritos por Product Owners em um research.md estruturado para desenvolvimento.
 
 - O usuário fornece o nome da feature e a skill verifica a existencia da feature e seu arquivo **research.md** na pasta, para saber se é para 'atualizar' ou 'criar' um novo research.md.
 - Caso a feature não exista, é criada a pasta da feature com um arquivo **prd.md** onde será adicionado o conteudo do requisito escrito pelo Product Owner para conversão.
-- O usuário é avisado que o arquivo foi criado e a skill irá aguardar a confirmação de que o conteudo do requisito foi adicionado no prd.md.
-- Após a confirmação do usuário, a skill irá ler o conteudo do arquivo prd.md e caso o requisito esteja vago, irá realizar perguntas especificas para remover 'ambiguidades e ruídos' da especificação.
-- No final, o arquivo research.md é gerado ou atualizado na pasta da feature seguindo a estrutura, padrôes e especificações definidas nesta skill usando de recursos visuais que facilite a compreensão humana.
+- O usuário é avisado que o arquivo foi criado e a skill irá aguardar a confirmação de que o conteudo do requisito foi adicionado no **prd.md**.
+- Após a confirmação do usuário, a skill irá ler o conteudo do arquivo prd.md e caso o requisito esteja vago, irá realizar perguntas especificas para remover **ambiguidades e ruídos** da especificação.
+- No final, o arquivo research.md é gerado ou atualizado na pasta da feature seguindo a estrutura, padrôes e especificações definidas nesta skill, usando recursos visuais que facilite a compreensão humana.
 
 ---
 
-# Regra Fundamental
+## Regra Fundamental
 
 - **SIGA O REQUISITO ORIGINAL EXATAMENTE COMO FORNECIDO. NÃO INVENTE, NÃO ADICIONE E NÃO SUPONHA NADA QUE NÃO ESTEJA EXPRESSAMENTE DEFINIDO NA US.**
 - Se a US não menciona algo, não inclua no research. Se há ambiguidade, pergunte ao usuário antes de supor.
@@ -46,11 +49,11 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 
 ## Criar uma nova feature
 
-- Crie o arquivo **prd.md** na pasta da feature e informe ao usuário que o arquivo foi criado na pasta, com espaço para preencher com o requisito escrito pelo po, e considerações técnicas que o dev poderá preencher caso necessário.
+- Crie o arquivo **prd.md** na pasta da feature e informe ao usuário que o arquivo foi criado na pasta, com espaço para preencher com o requisito escrito pelo po, e considerações técnicas e links para referencias que o dev poderá preencher caso necessário.
 - Solicite ao usuário que adicione o conteúdo do requisito para que possa iniciar o processo de geração do **research.md**
 - Execute a seção **Opcoes do terminal** com a intenção de **criar uma nova feature**
 - Para cada caso de uso localizado na seção **Documentação dos Casos de Uso**, salve usando as instruções localizadas em `./references/actor-and-uc.md` na seção **2.2. Localização** usando de recursos visuais que facilite a compreensão humana.
-- Grave o conteúdo atualizado no arquivo **research.md** seguindo a estrutuda definida na seção **Estrutura do arquivo** removendo os casos de uso que foram para os arquivos separados e adicionando no lugar a referencia até o arquivo do caso de uso gerado usando de recursos visuais que facilite a compreensão humana.
+- Grave o conteúdo atualizado no arquivo **research.md** seguindo a estrutuda definida na seção **Estrutura do arquivo** removendo os casos de uso que foram para os arquivos separados e adicionando no lugar a referencia até o arquivo do caso de uso gerado, usando se necessário recursos visuais que facilite a compreensão humana.
 
 ---
 
@@ -67,6 +70,11 @@ Esta SKILL converte requisitos abstratos escritos por Product Owners em um resea
 ---
 
 ## Estrutura do arquivo
+
+- **Autor:** Usuário que gerou o arquivo pela primeira vez (pegar do git)
+- **Data e hora da geração:** Data e hora da geração
+- **Status:** (proposing, prototyping, refinement, to-develop, developing, code-review, homologating, pending, ready-to-production, published)
+- **Ultima modificação:** Data e hora da ultima modificação - (Usuário git que modificou).
 
 ### 1. Contexto do Produto
 
