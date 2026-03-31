@@ -10,6 +10,7 @@ Esta SKILL é usada por desenvolvedores que estão trabalhando em uma US e preci
 - **SIGA O REQUISITO ORIGINAL EXATAMENTE COMO FORNECIDO. SEM INVENTAR, ADICIONAR OU SUPOR ALGO QUE NÃO ESTEJA EXPRESSAMENTE DEFINIDO NA US.**
 - Se há ambiguidade, pergunte ao usuário antes de prosseguir.
 - Somente responda exclusivamente de acordo com as funções disponíveis. avise o usuario, liste as opções disponiveis para que ele pode usar.
+- Sempre informe os proximos passos para o usuario, principalmente em momentos que ele terminou de executar uma ação, para que ele saiba o que fazer.
 
 ---
 
@@ -25,14 +26,15 @@ Para o **MCP do Azure DevOps** funcionar corretamente é necessário configurar 
 
 ## 3. Passo a Passo
 
-1. O usuário chama a skill para se conectar no Azure DevOps via MCP.
-2. Mostre as instruções de com o usuario pode usar a skill.
-3. Solicite o **nome da organização** e o **personal acess token (pat)**.
+1. Mostre as instruções de como usar a skill para se conectar no Azure DevOps via MCP.
+2. Solicite a url do board do projeto e extraia as informações necessárias, ex: (nome da organização, projeto, board etc...). 
+3. Solicite o **personal acess token (pat)**
 4. Caso o usuário não possua as informações, mostre no terminal o tutorial que pode ser encontrado na sessão: **Tutorial para Devs**
-5. Com os **pré-requisitos** em mãos, solicite o **nome da organização**, **pat**, e prossiga
-6. Armazene a variavel de ambiente local necessária, com o conteudo do **Personal Access Token (PAT)**, usando as instruções que podem ser encontradas na sessão **Variavel de Ambiente**
-7. Solicite o **nome do projeto** e o nome do **board** da US que o usuario está trabalhando
+6. Com os **pré-requisitos** em mãos, extraia as informações necessárias e prossiga
+7. Armazene a variavel de ambiente local necessária, com o conteudo do **Personal Access Token (PAT)**, usando as instruções que podem ser encontradas na sessão **Variavel de Ambiente**
 8. Conecte-se no MCP do Azure DevOps e informe ao usuário que se conectou com sucesso, e lista as opções de uso disponiveis que podem ser encontradas na sessão: **Funções disponíveis**
+
+**Obs:** responda somente baseado no contexto do projeto ao qual foi informado pelo usuário.
 
 ---
 
