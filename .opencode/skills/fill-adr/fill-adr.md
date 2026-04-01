@@ -10,9 +10,9 @@ Esta skill analisa o **prd.md** da feature $ARGUMENTS e o código fonte do monor
 
 ---
 
-## Regra Fundamental
+## Regras Fundamentais
 - **SIGA O REQUISITO ORIGINAL EXATAMENTE COMO FORNECIDO. NÃO INVENTE, NÃO ADICIONE E NÃO SUPONHA NADA QUE NÃO ESTEJA EXPRESSAMENTE DEFINIDO NA US.**
-- Se a US não menciona algo, não inclua no research. Se há ambiguidade, pergunte ao usuário antes de supor.
+- Se a US não menciona algo, não inclua. Se há ambiguidade, pergunte ao usuário antes de supor.
 - Somente deve ser alterado a sessão **2. Decisôes Técnicas (ADR)**, existe uma separação clara entre **requisito do product owner** com as decisôes técnicas da sessão **2. Decisôes Técnicas (ADR)** que deve ser seguida. 
 - Todo o conteudo do product owner definido inicialmente deve ser mantido sem alteração, e o novo conteudo deve cumprir os requisitos originais.
 - Pergunte ao usuário, caso precise de alguma informação, antes de supor.
