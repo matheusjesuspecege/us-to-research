@@ -48,17 +48,117 @@
 
 ## 2. Decisões Técnicas (ADR)
 
+### 2.1. Resumo da Decisão
+
+Criar o package **@linka/ui** para compartilhamento de componentes UI entre organizer e backoffice, migrando o dashboard existente do organizer para o monorepo como package reutilizável.
+
 ### 2.2. Contexto
 
-Qual é o problema que estamos observando e que motiva essa decisão ou mudança ?
+O projeto do Linka Eventos funciona em um monorepo (turborepo + pnpm workspaces) com packages compartilhados em `packages/` e apps em `apps/`. Já existe o package `@linka/domain` que contém DTOs, requests e enums compartilhados.
+
+O **organizer** possui um dashboard completo em React com:
+- 10 gráficos usando recharts (tickets, vendas, check-ins, cupons, etc.)
+- Componentes de UI (IndicatorCard, ChartCard, ExportChartDialog)
+- Sistema de filtros com jotai atoms
+- Data fetching com @tanstack/react-query
+- Traduções com react-i18next
+
+O **backoffice** atualmente utiliza PowerBI Embed que será descontinuado, necessitando migrar para o mesmo dashboard do organizer.
 
 ### 2.3. Decisão
 
-Qual é a mudança que estamos propondo e/ou implementando?
+Criar o package `@linka/ui` com a seguinte estrutura:
 
-### 2.4. Consequências
+```
+packages/ui/
+├── src/
+│   ├── components/       # IndicatorCard, ChartCard, ExportChartButton
+│   ├── charts/           # Componentes de gráficos reutilizáveis
+│   ├── pages/            # Dashboard page completa
+│   └── filters/          # DashboardFilters, DateRangePicker, MultiSelect
+```
 
-O que se torna mais fácil ou mais dificil de fazer por causa dessa mudança ?
+**Export principal:**
+- `@linka/ui` - exports: Dashboard, DashboardFilters, IndicatorCard, Charts
+
+### 2.4. Dependências do Package
+
+O package `@linka/ui` terá como dependências diretas:
+
+| Dependência | Versão Atual (organizer) | Purpose |
+|------------|--------------------------|---------|
+| recharts | 3.7.0 | Componentes de gráficos |
+| @radix-ui/* | 1.1.15 | Dialog, Popover, Slot |
+| tailwindcss | 3.4.1 | Estilização |
+| jotai | 2.8.2 | Estado local dos filtros |
+| @tanstack/react-query | 5.70.0 | Data fetching |
+| react-i18next | 14.0.0 | Internacionalização |
+| clsx, tailwind-merge | - | Utilitários |
+| @ads/components-react | 2.0.7 | Componentes base |
+| @ads/tokens | 1.6.1 | Tokens de design |
+
+### 2.5. Arquitetura de Dados
+
+**Separação de responsabilidades:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                     APP (organizer/backoffice)          │
+│  - Hooks de data fetching (useEventDashboardMetrics)     │
+│  - Lógica de negócio específica                          │
+│  - Configuração de API/rotas                             │
+└─────────────────────┬───────────────────────────────────┘
+                      │ props (dados processados)
+                      ▼
+┌─────────────────────────────────────────────────────────┐
+│                      @linka/ui                           │
+│  - Componentes de apresentação                           │
+│  - Gráficos (recharts)                                  │
+│  - Filtros com jotai (estado local da UI)               │
+│  - Traduções via i18n                                   │
+└─────────────────────────────────────────────────────────┘
+```
+
+- O **package UI** recebe dados via props para renderização
+- Os **hooks de data fetching** permanecem nos apps
+- Os **atoms de filtros** (jotai) são internos ao package
+- DTOs importados de `@linka/domain` (já existente)
+
+### 2.6. Estratégia de Build e Dev
+
+**Build:**
+- turborepo com `dependsOn: ["^build"]` - já configurado
+- Os apps declaram `"@linka/ui": "workspace:*"` no package.json
+- Ao buildar o package, os apps consomem automaticamente
+
+**Dev:**
+- `pnpm dev:packages` ou `pnpm -w --filter @linka/ui dev` para watch mode
+- Alterações no package refletem ao reiniciar o dev server dos apps
+- Alternativa futura: usar `vite-plugin-dts` com watch mode
+
+**Migração:**
+1. Criar package `@linka/ui` com estrutura inicial
+2. Migrar componentes do organizer/src/ui/pages/dashboard
+3. Migrar componentes de ui/components (chart.tsx, skeleton, etc.)
+4. Instalar como dependência no organizer (substituir importação local)
+5. Instalar como dependência no backoffice (substituir PowerBI)
+6. Remover código duplicado do organizer
+
+### 2.7. Consequências
+
+**Positivas:**
+- Reuso do dashboard completo entre organizer e backoffice
+- Manutenção centralizada dos componentes de gráficos
+- Padronização da UI entre apps
+- Remoção do PowerBI (licença e complexidade)
+- Evolução independente do dashboard
+
+**Pontos de Atenção:**
+- Recharts e libs de gráficos precisarão estar no package
+- React Query e Jotai são peerDependencies ou dependências diretas
+- Tailwind configurado nos apps precisa reconhecer classes do package
+- Componentes com traduções requerem i18n configurado nos apps consumidores
+- Eventual refatoração de imports nos apps existentes 
 
 ---
 
